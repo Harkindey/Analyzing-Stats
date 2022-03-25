@@ -9,12 +9,16 @@ const matches = fs
     return item.split(',');
   });
 
+const homeWin = 'H';
+const awayWin = 'A';
+const draw = 'D';
+
 let manUnitedWin = 0;
 
 for (let match of matches) {
   if (
-    (match[1] === 'Man United' && match[5] === 'H') ||
-    (match[2] === 'Man United' && match[5] === 'A')
+    (match[1] === 'Man United' && match[5] === homeWin) ||
+    (match[2] === 'Man United' && match[5] === awayWin)
   ) {
     manUnitedWin++;
   }
