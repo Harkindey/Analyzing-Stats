@@ -11,8 +11,6 @@ export class CsvFileReader {
         encoding: 'utf-8',
       })
       .split('\n')
-      .map((item: string): string[] => {
-        return item.split(',');
-      });
+      .map((item: string): string[] => item.split(','));
   }
 }
