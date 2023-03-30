@@ -42,3 +42,31 @@ function printAnything<T>(arr:T[]):void {
 }
 printAnything([1,2,3,4,5,6])
 printAnything(['1','2','3','4','5','0'])
+
+
+// Generic Constraint
+
+class Car {
+    print(){
+        console.log('I am a car')
+    }
+}
+
+class House {
+    print(){
+        console.log('I am a house')
+    }
+}
+
+interface Printable {
+    print(): void;
+}
+
+function printHouseOrCars<T extends Printable>(arr:T[]):void{
+    for(let i=0; i < arr.length; i++){
+        arr[i].print()
+    }
+}
+
+printHouseOrCars([new House(), new House(),new Car()])
+printHouseOrCars([new Car(), new Car()])
